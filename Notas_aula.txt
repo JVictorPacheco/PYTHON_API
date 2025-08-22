@@ -1,0 +1,66 @@
+AULA 3 - ENTENDER @PROPERTY:
+
+-- ELE ALTERA A FORMA QUE UM ATRIBUTO SERÁ LIDO. ALEM DISSE É BOM USAR QUANDO UM METODO PODE SER USADO COM ATRIBUTO DA CLASSE.
+ASSIM PODEMOS LER AQUELA FUNÇAO COMO ATRIBUDO
+
+EXEMPLO:
+
+class Pessoa:
+    def __init__(self, nome, sobrenome):
+        self._nome = nome
+        self._sobrenome = sobrenome
+    
+    @property
+    def nome_completo(self):  # É uma CARACTERÍSTICA da pessoa
+        return f"{self._nome} {self._sobrenome}"
+    
+    @property
+    def idade_categoria(self):  # É um ATRIBUTO derivado
+        if self.idade < 18:
+            return "Menor"
+        return "Maior"
+
+# Uso natural:
+pessoa = Pessoa("João", "Silva")
+print(pessoa.nome_completo)    # Faz sentido como atributo
+print(pessoa.idade_categoria)  # É uma característica
+
+________________________________________________________________________________________________________________________________________
+
+ENTENDER isinstance():
+
+
+é uma função built-in do Python que verifica se um objeto é uma instância de uma classe específica (ou classes). É
+fundamental para validação de tipos e programação defensiva.
+
+AJUDA NA SEGUNRANCA QUANDO QUEREMOS QUE ALGUM PARAMETRO DE UMA FUNCAO SEJA DO TIPO QUE DETERMINAMOS EM UMA CLASSE, SE NAO FOR ISSO
+ELE NAO IRA ACEITAR, ELE AVERIGUA SE UM OBJETO E DO TIPO QUE QUEREMOS 
+
+
+EXEMPLOS:
+
+pythonclass Animal:
+    pass
+
+class Cachorro(Animal):
+    pass
+
+rex = Cachorro()
+
+# isinstance considera herança
+print(isinstance(rex, Cachorro))  # True
+print(isinstance(rex, Animal))    # True (herança!)
+
+# type() é mais restritivo
+print(type(rex) == Cachorro)      # True
+print(type(rex) == Animal)        # False (não considera herança)
+
+
+________________________________________________________________________________________________________________________________________
+
+CLASSE ABSTRATA -->
+
+
+Uma classe abstrata em Python é uma classe que não pode ser instanciada diretamente e serve como um modelo/contrato para outras classes. 
+Ela define métodos que as classes filhas obrigatoriamente devem implementar.
+
