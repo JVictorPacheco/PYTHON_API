@@ -56,11 +56,29 @@ print(type(rex) == Cachorro)      # True
 print(type(rex) == Animal)        # False (não considera herança)
 
 
-________________________________________________________________________________________________________________________________________
+________________________________________________________________________________________________
 
 CLASSE ABSTRATA -->
 
 
 Uma classe abstrata em Python é uma classe que não pode ser instanciada diretamente e serve como um modelo/contrato para outras classes. 
 Ela define métodos que as classes filhas obrigatoriamente devem implementar.
+
+_______________________________________________________________________________________________
+
+
+Comando para ativar ambiente virtual: source venv/bin/activate
+Comando para desativar ambiente virtual: Desactivate
+
+Obs.: Exatamente! Ambientes virtuais, como o venv no contexto do Python, permitem isolar as dependências
+de um projeto. Isso significa que você pode ter diferentes versões de bibliotecas e pacotes instalados
+em ambientes virtuais separados, evitando conflitos entre eles. Essa prática é fundamental para garantir 
+que um projeto possa ser reproduzido consistentemente em diferentes máquinas e ambientes, contribuindo 
+para a estabilidade e consistência do desenvolvimento de software.
+
+
+Exatamente! Quando você cria um ambiente virtual, está essencialmente construindo um espaço separado e 
+independente para o seu projeto. Esse espaço contém uma cópia própria do Python e um local dedicado para 
+armazenar todas as bibliotecas e scripts necessários para o projeto. A razão para isso é evitar
+que as bibliotecas específicas desse projeto entrem em conflito com as bibliotecas do sistema global.
 
