@@ -1,0 +1,3 @@
+O @property em Python é um decorador que transforma um método em um atributo, 
+permitindo que você o acesse sem usar parênteses (). É muito útil para encapsulamento
+e controle de acesso aos dados da classe.

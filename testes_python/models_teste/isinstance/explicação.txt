@@ -1,0 +1,8 @@
+O isinstance() é uma função built-in do Python que verifica se um objeto é uma 
+instância de uma classe específica (ou classes). É fundamental para validação de 
+tipos e programação defensiva.
+
+Sintaxe:
+
+
+isinstance(objeto, classe_ou_tupla_de_classes)
