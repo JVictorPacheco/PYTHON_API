@@ -82,3 +82,42 @@ independente para o seu projeto. Esse espaço contém uma cópia própria do Pyt
 armazenar todas as bibliotecas e scripts necessários para o projeto. A razão para isso é evitar
 que as bibliotecas específicas desse projeto entrem em conflito com as bibliotecas do sistema global.
 
+
+_______________________________________________________________________________________________
+
+Nesse trecho de cod -
+
+
+if response.status_code == 200:
+    dados_json = response.json()
+    # print(dados_json)
+    dados_restaurante = {} #dicionario vazio
+    for item in dados_json:
+        nome_do_restaurante = item['Company'] # Pegar o item company - Nome do restaurante
+        if nome_do_restaurante not in dados_restaurante:
+            dados_restaurante[nome_do_restaurante] = [] #Lista vazia dentro do dicionario
+            
+            
+        dados_restaurante[nome_do_restaurante].append({
+            "item": item['Item'],
+            "price": item['price'],
+            "description": item['description']
+        })
+    
+else:
+    print(f'O erro foi {response.status_code}')
+
+
+Se o status_code for 200 ele ira me trazer a resposta no formato json, com isso ele ira 
+construir um dicionario vazio para armazenar este json que foi pego, com isso cada item
+desse json ele ira pegar o company(Nome do restaurante) se o não existir o company nesse dicionario vazio
+ele ira criar um lista vazia, dentro dessa lista vazia e ira acrescentar os dados dentro dela
+como no exemplo abaixo:
+
+
+dados_restaurante[nome_do_restaurante].append({
+            "item": item['Item'],
+            "price": item['price'],
+            "description": item['description']
+        })
+

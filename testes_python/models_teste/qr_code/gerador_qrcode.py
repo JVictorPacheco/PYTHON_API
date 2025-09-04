@@ -1,8 +1,9 @@
 import qrcode
 from PIL import Image, ImageDraw, ImageFont
 
-data = "Opá, isso é um teste"
-titulo = "AVR"
+data = "QFDEM"
+#data = "https://www.obramax.com.br/piso%20porcelanato?_q=piso%20porcelanato&map=ft"
+titulo = "QFDEM"
 
 qr = qrcode.QRCode(box_size=10, border=4)
 qr.add_data(data)

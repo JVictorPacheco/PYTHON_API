@@ -1,0 +1,75 @@
+EXPLICAÇÃO DETALHADA DO ARQUIVO app.py
+==========================================
+
+OBJETIVO DO CÓDIGO:
+------------------
+Este código consome uma API de restaurantes e organiza os dados por restaurante, criando arquivos JSON separados para cada estabelecimento.
+
+FLUXO DE EXECUÇÃO:
+-----------------
+
+1. IMPORTAÇÕES (Linhas 1-2):
+   - requests: biblioteca para fazer requisições HTTP
+   - json: biblioteca para trabalhar com dados JSON
+
+2. REQUISIÇÃO À API (Linhas 5-7):
+   - Define a URL da API de restaurantes
+   - Faz uma requisição GET para obter os dados
+   - Armazena a resposta na variável 'response'
+
+3. VERIFICAÇÃO DE SUCESSO (Linha 9):
+   - Imprime o objeto response (mostra status da requisição)
+
+4. PROCESSAMENTO DOS DADOS (Linhas 11-25):
+   Se a requisição foi bem-sucedida (status 200):
+   
+   - Linha 12: Converte a resposta para formato JSON Python
+   - Linha 14: Cria um dicionário vazio para organizar dados por restaurante
+   
+   - Loop principal (Linhas 15-25):
+     * Para cada item nos dados da API:
+       - Extrai o nome do restaurante (campo 'Company')
+       - Verifica se é a primeira vez que encontra este restaurante
+       - Se for novo, cria uma lista vazia para ele
+       - Adiciona os dados do item (nome, preço, descrição) na lista do restaurante
+
+5. TRATAMENTO DE ERRO (Linhas 27-28):
+   - Se a requisição falhar, mostra o código do erro
+
+6. GERAÇÃO DOS ARQUIVOS (Linhas 32-35):
+   - Para cada restaurante no dicionário organizado:
+     * Cria um nome de arquivo baseado no nome do restaurante
+     * Abre/cria um arquivo JSON
+     * Salva todos os itens daquele restaurante no arquivo
+     * Formata o JSON com indentação para melhor legibilidade
+
+ESTRUTURA DOS DADOS:
+-------------------
+- Dados originais da API: lista de itens com Company, Item, price, description
+- Dados organizados: dicionário onde cada chave é um restaurante e o valor é uma lista de seus itens
+- Arquivos finais: um JSON por restaurante contendo apenas os itens daquele estabelecimento
+
+EXEMPLO DE TRANSFORMAÇÃO:
+------------------------
+API original:
+[
+  {"Company": "Pizza Hut", "Item": "Pizza", "price": "25.00", "description": "Deliciosa"},
+  {"Company": "Pizza Hut", "Item": "Refrigerante", "price": "5.00", "description": "Gelado"},
+  {"Company": "McDonald's", "Item": "Big Mac", "price": "15.00", "description": "Clássico"}
+]
+
+Resultado:
+- Arquivo "Pizza Hut.json" com pizza e refrigerante
+- Arquivo "McDonald's.json" com Big Mac
+
+BIBLIOTECAS NECESSÁRIAS:
+-----------------------
+- requests: pip install requests
+- json: biblioteca padrão do Python (já incluída)
+
+POSSÍVEIS MELHORIAS:
+-------------------
+- Tratamento de caracteres especiais nos nomes dos arquivos
+- Validação dos dados recebidos da API
+- Log de quantos arquivos foram criados
+- Tratamento de timeout na requisição
