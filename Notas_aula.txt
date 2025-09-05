@@ -121,3 +121,25 @@ dados_restaurante[nome_do_restaurante].append({
             "description": item['description']
         })
 
+
+_______________________________________________________________________________________________
+
+@app.get('/api/restaurantes')
+def get_restaurantes(restaurante: str = Query(None)):
+     url = 'https://guilhermeonrails.github.io/api-restaurantes/restaurantes.json'
+
+     response = requests.get(url)
+
+     if response.status_code == 200:
+          dados_json = response.json()
+
+          if restaurante is None:
+               return {'Dados': dados_json}
+
+-  NESTE CODIGO ESTAMOS CRIANDO UMA ROUTE PARA PEGAR O RESTAURANTE QUE QUEREMOS,
+DENTRO DESSA ROUTE CRIAMOS UM FUNÇÃO QUE TRAS COMO PARAMETRO O RESTAURANTE QUE QUEREMOS
+TRAZER, LOGO BAIXO TEM A URL QUE BUCAMOS E RESPOTA QUE SERIA DE FATO UM GET NAQUELA URL.
+TEMOS O IF QUE DIZ QUE SE A RESPOTA DO STATUS_CODE FOR 200 IREMOS TRAZER ESSA resposta
+EM JSON, COM ISS SE O RESTAURANTE FOR NONE(NULL) VAI ME RETORNAR TODOS OS DADOS DA resposta
+EM JSON
+
