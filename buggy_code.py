@@ -1,0 +1,3 @@
+# O seu código aqui
+def minha_funcao_com_bug():
+    ...
