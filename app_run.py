@@ -27,7 +27,7 @@ restaurante_burguer.adicionar_item(sobremesa_brownie)
 
 def main():
      #print(restaurante_burguer)
-     restaurante_burguer.exibir_cardapio
+     restaurante_burguer.exibir_cardapio()
      
 
 

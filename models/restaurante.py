@@ -78,7 +78,6 @@ class Restaurante:
             
             
             
-    @property
     def exibir_cardapio(self):
         print(f'Cardapio do restaurante {self._nome}\n')
         for i,item in enumerate(self._cardapio, start=1):
