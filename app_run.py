@@ -15,7 +15,7 @@ bebida_suco.aplicar_desconto()
 prato_de_churrasco = Prato('Prato de churrasco', 20.0, 'Melhor churrasco da cidade')
 prato_de_churrasco.aplicar_desconto()
 
-sobremesa_brownie = Sobremesa('Doce',  'Grande Gourmet', 'Brownie com petit gateau cremoso com massa e chocolate feito na casa', 'Brownie com petit gateau', 25.50)
+sobremesa_brownie = Sobremesa('Brownie com petit gateau', 25.50, 'Doce', 'Grande Gourmet', 'Brownie com petit gateau cremoso com massa e chocolate feito na casa')
 sobremesa_brownie.aplicar_desconto()
 
 

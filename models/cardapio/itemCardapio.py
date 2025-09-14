@@ -7,6 +7,10 @@ class ItemCardapio(ABC):
         self._preco = preco
         
         
+    @abstractmethod
+    def __str__(self):
+        pass
+
     @abstractmethod    
     def aplicar_desconto(self):
         pass
